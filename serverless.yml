@@ -1,0 +1,26 @@
+org: jameszwar
+app: synthetix
+service: v3-apr-lambda
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
+  - serverless-api-gateway-caching
+
+custom:
+  apiGatewayCaching:
+    enabled: true
+    ttlInSeconds: 3600

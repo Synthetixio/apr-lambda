@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "invoke": "serverless invoke local --function api"
+  },
+  "dependencies": {
+    "serverless-api-gateway-caching": "^1.10.3",
+    "serverless-postgres": "^2.1.0"
+  },
+  "devDependencies": {
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-offline": "^13.3.3"
+  }
+}
